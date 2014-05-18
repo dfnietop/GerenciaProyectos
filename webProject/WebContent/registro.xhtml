@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:mj="http://mojarra.dev.java.net/mojarra_ext"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid border="1" columns="2">
+				<h:outputText value="Nombre"></h:outputText>
+				<h:inputText required="true" size="20" maxlength="100"></h:inputText>
+				<h:outputText value="Apellido"></h:outputText>
+				<h:inputText required="true" maxlength="100" size="20"></h:inputText>
+				<h:outputText value="Usuario"></h:outputText>
+				<h:inputText required="true" size="20" maxlength="10"></h:inputText>
+				<h:outputText value="Password"></h:outputText>
+				<h:inputSecret required="true" size="20" maxlength="20">
+					<f:validateRegex
+						pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" />
+				</h:inputSecret>
+				<h:outputText value="Email"></h:outputText>
+				<h:inputText required="true" size="20" maxlength="100">
+					<f:validateRegex
+						pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+				</h:inputText>
+			</h:panelGrid>
+			<h:commandButton value="Guardar"></h:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
