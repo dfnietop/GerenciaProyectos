@@ -24,8 +24,6 @@ public class LoginBean {
 		us.setUSNOM(this.name);
 		us.setUSPAS(this.password);
 		dao.validarUsuario(us,conexion);
-		
-		
 	}
 
 	public String getName() {
