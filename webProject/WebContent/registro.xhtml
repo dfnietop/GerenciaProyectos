@@ -24,7 +24,7 @@
 				<h:outputText value="Email"></h:outputText>
 				<h:inputText value="#{registroBean.email}" required="true" size="20" maxlength="100"></h:inputText>
 			</h:panelGrid>
-			<h:commandButton id="guardarRegistroId" value="Guardar" actionListener="registroBean.guardar"></h:commandButton>
+			<h:commandButton id="guardarRegistroId" value="Guardar" actionListener="#{registroBean.guardar}"></h:commandButton>
 		</h:form>
 	</ui:define>
 </ui:composition>

@@ -24,7 +24,7 @@ public class UsuarioDao {
 			Connection con = conexion.getInstance().crearConexion();
 			Statement st = con.createStatement();   
 			
-			String sql = "INSERT INTO GERENCIA.USUARIOS ( USUARIO, PASSWORD, NOMBRES, APELLIDOS, EMAIL) VALUES ("+usuario.getUsuario()+","+usuario.getPassword()+","+usuario.getNombres()+","+usuario.getApellidos()+","+usuario.getEmail()+")";
+			String sql = "INSERT INTO GERENCIA.USUARIOS ( USUARIO, PASSWORD, NOMBRES, APELLIDOS, EMAIL) VALUES ('"+usuario.getUsuario()+"','"+usuario.getPassword()+"','"+usuario.getNombres()+"','"+usuario.getApellidos()+"','"+usuario.getEmail()+"')";
 			
 			st.executeUpdate(sql);
 		} catch (Exception e) {
