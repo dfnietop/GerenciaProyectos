@@ -5,7 +5,8 @@
 
 package com.muebles.seguridad;
 
-import com.muebles.persistencia.Conexion;
+import javax.faces.event.ActionEvent;
+
 import com.muebles.persistencia.Usuario;
 import com.muebles.persistencia.UsuarioDao;
 
@@ -20,16 +21,17 @@ public class RegistroBean {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void guardar(){  
-		UsuarioDao usuarioDao = new UsuarioDao();
-		Usuario usuario = new Usuario();
-		usuario.setNombres(this.nombre);
-		usuario.setApellidos(this.apellido);
-		usuario.setUsuario(this.usuario);
-		usuario.setPassword(this.password);
-		usuario.setEmail(this.email);
-		usuarioDao.guardar(usuario);
-		
+	public void guardar(ActionEvent ae){
+		if(ae.getComponent().getId().equals("guardarRegistroId")){
+			UsuarioDao usuarioDao = new UsuarioDao();
+			Usuario usuario = new Usuario();
+			usuario.setNombres(this.nombre);
+			usuario.setApellidos(this.apellido);
+			usuario.setUsuario(this.usuario);
+			usuario.setPassword(this.password);
+			usuario.setEmail(this.email);
+			usuarioDao.guardar(usuario);
+		}
 	}
 	
 	public String getNombre() {

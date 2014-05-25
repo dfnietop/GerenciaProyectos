@@ -18,7 +18,7 @@ public class UsuarioDao {
 
 	}
 	
-	public void guardar(Usuario usuario) {
+	public void guardar(Usuario usuario) {  
 		Conexion conexion = new Conexion();
 		try {   
 			Connection con = conexion.getInstance().crearConexion();

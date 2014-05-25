@@ -19,10 +19,12 @@
 				<h:inputText value="#{registroBean.usuario}" required="true" size="20" maxlength="10"></h:inputText>
 				<h:outputText value="Password"></h:outputText>
 				<h:inputSecret value="#{registroBean.password}" required="true" size="20" maxlength="20"></h:inputSecret>
+				<h:outputText value="Confirme Password"></h:outputText>
+				<h:inputSecret value="#{registroBean.password}" required="true" size="20" maxlength="20"></h:inputSecret>
 				<h:outputText value="Email"></h:outputText>
 				<h:inputText value="#{registroBean.email}" required="true" size="20" maxlength="100"></h:inputText>
 			</h:panelGrid>
-			<h:commandButton value="Guardar" action="registroBean.guardar"></h:commandButton>
+			<h:commandButton id="guardarRegistroId" value="Guardar" actionListener="registroBean.guardar"></h:commandButton>
 		</h:form>
 	</ui:define>
 </ui:composition>
