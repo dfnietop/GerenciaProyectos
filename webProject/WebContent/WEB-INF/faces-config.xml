@@ -11,6 +11,11 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
+		<managed-bean-name>registroBean</managed-bean-name>
+		<managed-bean-class>com.muebles.seguridad.RegistroBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
 		<description>Registro del inmueble</description>
 		<managed-bean-name>registroInmueblesBean</managed-bean-name>
 		<managed-bean-class>com.muebles.seguridad.RegistroInmueblesBean</managed-bean-class>

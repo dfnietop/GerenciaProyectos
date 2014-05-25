@@ -2,13 +2,11 @@ package com.muebles.persistencia;
 
 public class Usuario {
 	private int id;
-	private String USNOM;
-	private String USAPE;
-	private int USCED;
-	private String USEMA;
-	private String USCIU;
-	private String USTEL;
-	private String USPAS;
+	private String usuario;
+	private String password;
+	private String nombres;
+	private String apellidos;
+	private String email;
 
 	public Usuario() {
 		// TODO Auto-generated constructor stub
@@ -29,109 +27,45 @@ public class Usuario {
 		this.id = id;
 	}
 
-	/**
-	 * @return the uSNOM
-	 */
-	public String getUSNOM() {
-		return USNOM;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	/**
-	 * @param uSNOM
-	 *            the uSNOM to set
-	 */
-	public void setUSNOM(String uSNOM) {
-		USNOM = uSNOM;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
-	/**
-	 * @return the uSAPE
-	 */
-	public String getUSAPE() {
-		return USAPE;
+	public String getPassword() {
+		return password;
 	}
 
-	/**
-	 * @param uSAPE
-	 *            the uSAPE to set
-	 */
-	public void setUSAPE(String uSAPE) {
-		USAPE = uSAPE;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	/**
-	 * @return the uSCED
-	 */
-	public int getUSCED() {
-		return USCED;
+	public String getNombres() {
+		return nombres;
 	}
 
-	/**
-	 * @param uSCED
-	 *            the uSCED to set
-	 */
-	public void setUSCED(int uSCED) {
-		USCED = uSCED;
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
 	}
 
-	/**
-	 * @return the uSEMA
-	 */
-	public String getUSEMA() {
-		return USEMA;
+	public String getApellidos() {
+		return apellidos;
 	}
 
-	/**
-	 * @param uSEMA
-	 *            the uSEMA to set
-	 */
-	public void setUSEMA(String uSEMA) {
-		USEMA = uSEMA;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
-	/**
-	 * @return the uSCIU
-	 */
-	public String getUSCIU() {
-		return USCIU;
+	public String getEmail() {
+		return email;
 	}
 
-	/**
-	 * @param uSCIU
-	 *            the uSCIU to set
-	 */
-	public void setUSCIU(String uSCIU) {
-		USCIU = uSCIU;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	/**
-	 * @return the uSTEL
-	 */
-	public String getUSTEL() {
-		return USTEL;
-	}
-
-	/**
-	 * @param uSTEL
-	 *            the uSTEL to set
-	 */
-	public void setUSTEL(String uSTEL) {
-		USTEL = uSTEL;
-	}
-
-	/**
-	 * @return the uSPAS
-	 */
-	public String getUSPAS() {
-		return USPAS;
-	}
-
-	/**
-	 * @param uSPAS
-	 *            the uSPAS to set
-	 */
-	public void setUSPAS(String uSPAS) {
-		USPAS = uSPAS;
-	}
-
+	
 }

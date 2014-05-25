@@ -17,13 +17,12 @@ public class LoginBean {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void validar() {
+	public void validar() {   
 		Usuario us = new Usuario();
 		UsuarioDao dao = new UsuarioDao();
-		Conexion conexion = new Conexion();
-		us.setUSNOM(this.name);
-		us.setUSPAS(this.password);
-		dao.validarUsuario(us,conexion);
+		us.setNombres(this.name);
+		us.setPassword(this.password);
+		dao.validarUsuario(us);
 	}
 
 	public String getName() {
