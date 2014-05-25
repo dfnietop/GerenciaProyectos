@@ -20,7 +20,7 @@ public class RegistroBean {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void guardar(){
+	public void guardar(){  
 		UsuarioDao usuarioDao = new UsuarioDao();
 		Usuario usuario = new Usuario();
 		usuario.setNombres(this.nombre);
