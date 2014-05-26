@@ -6,32 +6,37 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.muebles.seguridad.RegistroInmueblesBean;
+
 
 
 public class InmueblesDao {
-	Inmuebles registro=new Inmuebles();
+	//Inmuebles registro=new Inmuebles();
 	ArrayList lista = new ArrayList();
+	RegistroInmueblesBean nuevo =new RegistroInmueblesBean();
 	public void crearInmueble(Inmuebles Inm, Conexion conexion) {
 		///Conexion conexion1 = new Conexion();
 		try {
 			
-			System.out.println(registro.getINMNOM());
+			System.out.println(Inm.getINMNOM());
+			System.out.println(Inm.getINMDIR());
+			System.out.println(nuevo.getNombre());
 			Connection con = conexion.getInstance().crearConexion();
 			Statement st = con.createStatement();
 			//String sql="INSERT INTO  inmueble (nombre,direccion,telefono,estado,negocio,id) "
 				//	+ "VALUES('hola','hola','hola','hola','hola',1);"; 
-			String sql ="INSERT INTO  inmueble (idin,nombre,direccion,telefono,estado,negocio,comentarios,id)"+" VALUES(3,"+"'"+
-			registro.getINMNOM()+"',"
-				+ "'"+registro.getINMDIR()+"',"
-							+ "'"+registro.getINMTEL()+"',"
-							+ "'"+registro.getINMVENOARR()
-							+"','"+registro.getINMNEGOC()+"'"
-							+",'"+registro.getINCCOMMENTS()+"'"
+			String sql ="INSERT INTO  inmueble (nombre,direccion,telefono,estado,negocio,comentarios,id)"+" VALUES("+"'"+
+			Inm.getINMNOM()+"',"
+				+ "'"+Inm.getINMDIR()+"',"
+							+ "'"+Inm.getINMTEL()+"',"
+							+ "'"+Inm.getINMVENOARR()
+							+"','"+Inm.getINMNEGOC()+"'"
+							+",'"+Inm.getINCCOMMENTS()+"'"
 							+",1);";
 			//PreparedStatement pstmt = con.prepareStatement(sql);
 			System.out.println(sql);
 			st.executeUpdate(sql);
-			System.out.println(st.execute(sql));
+		
 			//ResultSet resultado = comando.executeQuery(sql);
 //System.out.println(pstmt);
 		//INSERT INTO  inmueble (nombre,direccion,telefono,estado,negocio,id) 
