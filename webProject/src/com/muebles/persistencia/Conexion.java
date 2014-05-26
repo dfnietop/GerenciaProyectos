@@ -16,10 +16,6 @@ import java.util.Properties;
  * 
  */
 public class Conexion {
-	private String ususario;
-	private String pass;
-	private String url;
-	private String bd;
 	private Connection conexion = null;
 
 	public Conexion() {
@@ -32,31 +28,13 @@ public class Conexion {
 	public Connection crearConexion() {
 
 		try {
-//			Properties propiedades = new Properties();
-//			propiedades.load(new FileInputStream(
-//					"/PersistenceResource.properties"));
-//
-//			this.bd = propiedades.getProperty("bd");
-//			this.url = propiedades.getProperty("url");
-//			this.pass = propiedades.getProperty("pass");
-//			this.ususario = propiedades.getProperty("usuario");
-
 			Class.forName("com.mysql.jdbc.Driver");
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost/gerencia","root", "123456");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		return conexion;
 
 	}
