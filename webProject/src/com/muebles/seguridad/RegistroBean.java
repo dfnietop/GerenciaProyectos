@@ -5,6 +5,8 @@
 
 package com.muebles.seguridad;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import com.muebles.persistencia.Usuario;
@@ -15,7 +17,10 @@ public class RegistroBean {
 	private String apellido;
 	private String usuario;
 	private String password;
+	private String conPassword;
 	private String email;
+	public String error;
+	public boolean bolerr = false;
 
 	public RegistroBean() {
 		// TODO Auto-generated constructor stub
@@ -23,16 +28,21 @@ public class RegistroBean {
 	
 	public void guardar(ActionEvent ae){
 		if(ae.getComponent().getId().equals("guardarRegistroId")){
-			UsuarioDao usuarioDao = new UsuarioDao();
-			Usuario usuario = new Usuario();
-			usuario.setNombres(this.nombre);
-			usuario.setApellidos(this.apellido);
-			usuario.setUsuario(this.usuario);
-			usuario.setPassword(this.password);
-			usuario.setEmail(this.email);
-			usuarioDao.guardar(usuario);
+			if(this.password.equals(this.conPassword)){
+				UsuarioDao usuarioDao = new UsuarioDao();
+				Usuario usuario = new Usuario();
+				usuario.setNombres(this.nombre);
+				usuario.setApellidos(this.apellido);
+				usuario.setUsuario(this.usuario);
+				usuario.setPassword(this.password);
+				usuario.setEmail(this.email);
+				usuarioDao.guardar(usuario);
+			}else{
+				
+			}
+				
+			
 		}
-
 	}
 	
 	public String getNombre() {
@@ -89,4 +99,31 @@ public class RegistroBean {
 		this.password = password;
 	}
 
+	public String getConPassword() {
+		return conPassword;
+	}
+
+	public void setConPassword(String conPassword) {
+		this.conPassword = conPassword;
+	}
+
+	public String getError() {
+		return error;
+	}
+
+	public void setError(String error) {
+		this.error = error;
+	}
+
+	public boolean isBolerr() {
+		return bolerr;
+	}
+
+	public void setBolerr(boolean bolerr) {
+		this.bolerr = bolerr;
+	}
+	
+	
+
+	
 }
