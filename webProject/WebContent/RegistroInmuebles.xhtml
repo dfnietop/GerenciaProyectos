@@ -21,17 +21,18 @@
 				<h:inputText required="true" size="25" maxlength="10"
 					value="#{registroInmueblesBean.telefono}"></h:inputText>
 				<h:outputText value="Arriendo o Venta"></h:outputText>
-				<select name="Elegir Componente" value="#{registroInmueblesBean.ventOArr}">
-					<option>Arriendo</option>
-					<option>Venta</option>
-
-				</select>
+				<h:selectOneMenu value="#{registroInmueblesBean.ventOArr}">
+  			 	<f:selectItem itemValue="Arriendo" itemLabel="Arriendo" />
+   				<f:selectItem itemValue="venta" itemLabel="Venta" />	   							
+				</h:selectOneMenu>
+				
 				<h:outputText value="Tipo de Negocio"></h:outputText>
-				<select name="Elegir Componente" value="#{registroInmueblesBean.tipNeg}">
-					<option>Abierto</option>
-					<option>Cerrado</option>
-					<option>A convenir</option>
-				</select>
+				<h:selectOneMenu value="#{registroInmueblesBean.tipNeg}">
+   				<f:selectItem itemValue="Abierto" itemLabel="Abierto" />
+   				<f:selectItem itemValue="Cerrado" itemLabel="Cerrado" />	   
+				<f:selectItem itemValue="A convenir" itemLabel="A convenir" />	   							
+				</h:selectOneMenu>
+				
 				<h:outputText value="Comentarios"></h:outputText>
 				<h:inputText required="false" size="25" maxlength="200"
 					value="#{registroInmueblesBean.comments}"></h:inputText>
