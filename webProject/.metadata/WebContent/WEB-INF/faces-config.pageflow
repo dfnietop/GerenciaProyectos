@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14003846079919" configfile="/webProject/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="211" y="168" id="pf140038490439710" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf14009473091540 pf14009474013093" path="/login.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="402" y="168" id="pf140038490439712" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf14009474882254" inlinks="pf14009474013093" path="/welcome.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="RegistroInmuebles.xhtml" x="540" y="168" id="pf14009473091541" inlinks="pf14009474882254" path="/RegistroInmuebles.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="registro.xhtml" x="252" y="36" id="pf14009473091542" inlinks="pf14009473091540" path="/registro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcome.xhtml" x="402" y="168" id="pf140038490439712" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf14009474882254" inlinks="pf14009474013093" path="/welcome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="RegistroInmuebles.xhtml" x="540" y="168" id="pf14009473091541" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf14009474882254" path="/RegistroInmuebles.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registro.xhtml" x="252" y="36" id="pf14009473091542" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14009473091540" path="/registro.xhtml"/>
   <links id="pf14009473091540" target="pf14009473091542" source="pf140038490439710" outcome="registro"/>
   <links id="pf14009474013093" target="pf140038490439712" source="pf140038490439710" outcome="login"/>
   <links id="pf14009474882254" target="pf14009473091541" source="pf140038490439712" outcome="registrar"/>
