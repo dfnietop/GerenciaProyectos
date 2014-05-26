@@ -1,3 +1,4 @@
+
 package com.muebles.seguridad;
 
 import java.awt.event.ActionListener;
@@ -48,8 +49,8 @@ public class RegistroInmueblesBean {
 			Inm.setINMVENOARR(this.VentOArr);
 			Inm.setINMNEGOC(this.TipNeg);
 			Inm.setINCCOMMENTS(this.Comments);
-			Inm.setIdusuario(this.idusuario);
-
+			//Inm.setIdusuario(this.idusuario);
+			InmD.crearInmueble(Inm, conexion);
 		}
 		
 
