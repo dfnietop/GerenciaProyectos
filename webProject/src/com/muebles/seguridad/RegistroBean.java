@@ -32,6 +32,7 @@ public class RegistroBean {
 			usuario.setEmail(this.email);
 			usuarioDao.guardar(usuario);
 		}
+
 	}
 	
 	public String getNombre() {

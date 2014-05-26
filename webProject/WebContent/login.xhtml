@@ -11,11 +11,11 @@
 		<h:form rendered="true">
 			<h:panelGrid columns="2">
 				<h:outputText value="Usuario"></h:outputText>
-				<h:inputText value="#{loginBean.name}"></h:inputText>
+				<h:inputText value="#{loginBean.user}"></h:inputText>
 				<h:outputText value="Password"></h:outputText>
 				<h:inputSecret value="#{loginBean.password}"></h:inputSecret>
 			</h:panelGrid>
-			<h:commandButton value="Login" action="login" actionListener="loginBean.validar"></h:commandButton>
+			<h:commandButton value="Login" actionListener="#{loginBean.validar}"  id="validarId"></h:commandButton>
 			<h:commandLink value="Registro" action="registro"></h:commandLink>
 		</h:form>
 

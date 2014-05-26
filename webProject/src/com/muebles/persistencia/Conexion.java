@@ -3,31 +3,22 @@
  */
 package com.muebles.persistencia;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 /**
  * @author dfnietop
  * 
  */
 public class Conexion {
-	private String ususario;
-	private String pass;
-	private String url;
-	private String bd;
 	private Connection conexion = null;
 
 	public Conexion() {
-		// TODO Auto-generated constructor stub
 		crearConexion();
 	}
 
-	private static Conexion instance = null;
+	private static Conexion instance = new Conexion();
 
 	public Connection crearConexion() {
 
@@ -42,7 +33,7 @@ public class Conexion {
 //			this.ususario = propiedades.getProperty("usuario");
 
 			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection("jdbc:mysql://localhost/gerencia","root", "123456");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/gerencia","root", "Admin*1234");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -50,13 +41,6 @@ public class Conexion {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		return conexion;
 
 	}
