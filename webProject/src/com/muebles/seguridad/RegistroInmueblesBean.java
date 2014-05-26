@@ -44,16 +44,31 @@ public class RegistroInmueblesBean {
 			Conexion conexion = new Conexion();
 			Inm.setINMNOM(this.nombre);
 			Inm.setINMDIR(this.direccion);
-			Inm.setINCCOMMENTS(this.Comments);
-			Inm.setINMNEGOC(this.TipNeg);
 			Inm.setINMTEL(this.telefono);
 			Inm.setINMVENOARR(this.VentOArr);
+			Inm.setINMNEGOC(this.TipNeg);
+			Inm.setINCCOMMENTS(this.Comments);
 			Inm.setIdusuario(this.idusuario);
-			InmD.crearInmueble(Inm, conexion);
+
 		}
+		
 
 	}
-
+	/**
+	public void consultain(){
+		Inmuebles Inm = new Inmuebles();
+		InmueblesDao InmD = new InmueblesDao();
+		Conexion conexion = new Conexion();
+		Inm.setINMNOM(this.nombre);
+		Inm.setINMDIR(this.direccion);
+		Inm.setINCCOMMENTS(this.Comments);
+		Inm.setINMNEGOC(this.TipNeg);
+		Inm.setINMTEL(this.telefono);
+		Inm.setINMVENOARR(this.VentOArr);
+		Inm.setIdusuario(this.idusuario);
+		InmD.consultarInmueble(Inm, conexion);
+	}
+*/
 	public void consultainmueble() {
 		String a;
 		String b;
