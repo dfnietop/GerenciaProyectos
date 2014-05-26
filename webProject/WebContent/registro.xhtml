@@ -23,9 +23,12 @@
 				<h:inputSecret value="#{registroBean.conPassword}" required="true" size="20" maxlength="20"></h:inputSecret>
 				<h:outputText value="Email"></h:outputText>
 				<h:inputText value="#{registroBean.email}" required="true" size="20" maxlength="100"></h:inputText>
+				<p:captcha id="captcha"/>
 			</h:panelGrid>
-			<h:commandButton id="guardarRegistroId" value="Guardar" actionListener="#{registroBean.guardar}"></h:commandButton>
-			<h:outputText value="#{registroBean.error}" rendered="#{registroBean.bolerr}" color="red" ></h:outputText>
+			<h:commandButton id="guardarRegistroId" value="Guardar" actionListener="#{registroBean.guardar}" ajax="false"></h:commandButton>
+			<h:panelGrid>
+				<h:outputText value="#{registroBean.error}" rendered="#{registroBean.bolerr}" style="color: red" ></h:outputText>
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>

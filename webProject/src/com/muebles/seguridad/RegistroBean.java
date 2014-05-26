@@ -37,14 +37,30 @@ public class RegistroBean {
 				usuario.setPassword(this.password);
 				usuario.setEmail(this.email);
 				usuarioDao.guardar(usuario);
+				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Your Code Is Correct !",null));
+				clear();
 			}else{
-				
-			}
-				
-			
+				bolerr=true;
+				error="Las contraseñas no coinciden, por favor intente de nuevo.";
+				this.nombre="";
+				this.apellido="";
+				this.usuario="";
+				this.email="";
+			}	
 		}
 	}
 	
+	private void clear() {
+		this.nombre="";
+		this.apellido="";
+		this.usuario="";
+		this.password="";
+		this.conPassword="";
+		this.email="";
+		this.bolerr=false;
+		this.error="";
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

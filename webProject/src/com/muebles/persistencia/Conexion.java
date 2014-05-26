@@ -33,7 +33,7 @@ public class Conexion {
 //			this.ususario = propiedades.getProperty("usuario");
 
 			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection("jdbc:mysql://localhost/gerencia","root", "Admin*1234");
+			conexion = DriverManager.getConnection("jdbc:mysql://localhost/gerencia","root", "123456");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
