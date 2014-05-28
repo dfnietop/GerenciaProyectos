@@ -1,5 +1,7 @@
 package com.muebles.persistencia;
 
+import java.util.ArrayList;
+
 public class Inmuebles {
 
 	private int id;
@@ -10,10 +12,15 @@ public class Inmuebles {
 	private String INMNEGOC;
 	private String INCCOMMENTS;
 	private String idusuario;
+	ArrayList<Inmuebles> lista = new ArrayList<Inmuebles>();
 	
-	
-	public Inmuebles() {
-		// TODO Auto-generated constructor stub
+
+	public Inmuebles(int id, String b, String c, String d, String f) {
+		this.id=id;
+		this.INMNOM=b;
+		this.INMDIR=c;
+		this.INMTEL=d;
+		this.INMNEGOC=f;	
 	}
 
 	/**
@@ -137,3 +144,4 @@ public class Inmuebles {
 	}
 
 }
+
