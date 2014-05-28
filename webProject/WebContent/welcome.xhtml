@@ -1,3 +1,6 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -6,45 +9,45 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
 	<ui:define name="content">
 		<h:form rendered="true">
-			<h:outputText value="Lista de Inmuebles de #{loginBean.user} "></h:outputText>
+			<h:outputText value="Lista de Inmuebles:#{loginBean.user} "></h:outputText>
 			<br></br>
 			<br></br>
-			<h:commandButton value="Guardar" id="guardar"
-				actionListener="#{registroInmueblesBean.consultain}"></h:commandButton>
-			
-			<h:dataTable border="1" value="#{registroInmueblesBean.lista}" var="lista">
+		
+			<h:dataTable value="#{registroInmueblesBean.lista}" border="1" var="lista">
      <h:column>
           <f:facet name="header">
-               <h:outputText value="id"/>
+               <h:outputText value="id"/></h:outputText>
           </f:facet>
-          <h:outputText value="#{lista.idusuario}"/>
+          <h:outputText value="#{lista.id}"/></h:outputText>
      </h:column>
      <h:column>
           <f:facet name="header">
-               <h:outputText value="Nombre"/>
+               <h:outputText value="Nombre"/></h:outputText>
           </f:facet>
-          <h:outputText value="#{lista.nombre}"/>
+          <h:outputText value="#{lista.INMNOM}"/></h:outputText>
      </h:column>
      <h:column>
           <f:facet name="header">
-               <h:outputText value="Direccion"/>
+               <h:outputText value="Direccion"/></h:outputText>
           </f:facet>
-          <h:outputText value="#{lista.direccion}"/>
+          <h:outputText value="#{lista.INMDIR}"/></h:outputText>
      </h:column>
      <h:column>
           <f:facet name="header">
-               <h:outputText value="Telefono"/>
+               <h:outputText value="Telefono"/></h:outputText>
           </f:facet>
-          <h:outputText value="#{lista.telefono}"/>
+          <h:outputText value="#{lista.INMTEL}"/></h:outputText>
      </h:column>
 
 <h:column>
           <f:facet name="header">
-               <h:outputText value="Estado"/>
+               <h:outputText value="Estado"/></h:outputText>
           </f:facet>
-          <h:outputText value="#{lista.tipNeg}"/>
+          <h:outputText value="#{lista.INMNEGOC}"/></h:outputText>
      </h:column>
      </h:dataTable>
+     <h:commandButton value="Guardar" id="guardar"
+				actionListener="#{registroInmueblesBean.consultain}"></h:commandButton>
 			<h:commandLink value="Registrar un inmueble nuevo"
 				action="registrar"></h:commandLink>
 		</h:form>
