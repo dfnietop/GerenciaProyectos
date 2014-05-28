@@ -1,4 +1,3 @@
-
 package com.muebles.seguridad;
 
 import java.awt.List;
@@ -29,16 +28,16 @@ public class RegistroInmueblesBean {
 	private String TipNeg;
 	private String Comments;
 	private String idusuario;
-	ArrayList<String> lista = new ArrayList<String>();
-private InmueblesDao inm=new InmueblesDao();	
-
+		
+ArrayList<Inmuebles> lista = new ArrayList<Inmuebles>();
+Inmuebles Inm = new Inmuebles(0, Comments, Comments, Comments, Comments);
 	public RegistroInmueblesBean() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public void registroInmuebles(ActionEvent evento) {
 		if (evento.getComponent().getId().equals("guardar")) {
-			Inmuebles Inm = new Inmuebles();
+			Inmuebles Inm = new Inmuebles(0, Comments, Comments, Comments, Comments);
 			InmueblesDao InmD = new InmueblesDao();
 			Conexion conexion = new Conexion();
 			Inm.setINMNOM(this.nombre);
@@ -55,16 +54,23 @@ private InmueblesDao inm=new InmueblesDao();
 	}
 	
 	public void consultain(ActionEvent evento){
-		if (evento.getComponent().getId().equals("guardar")) {
-		Inmuebles Inm = new Inmuebles();
+		//if (evento.getComponent().getId().equals("guardar")) {
 		InmueblesDao InmD = new InmueblesDao();
+		Inmuebles Inm = new Inmuebles(0,nombre ,direccion ,telefono ,TipNeg);
+
 		Conexion conexion = new Conexion();
-		
+	
+		Inm.getId();
+		Inm.getINMNOM();
+		Inm.getINMDIR();
+		Inm.getINMTEL();
+		Inm.getINMNEGOC();
 		InmD.consultarInmueble(conexion);
+		
 	//lista.add(arg0)
-		InmD.getLista();
+		//InmD.getLista();
 		}
-	}
+	//}
 	
 	public String getidusuario() {
 		return idusuario;
@@ -121,14 +127,16 @@ private InmueblesDao inm=new InmueblesDao();
 	public void setComments(String comments) {
 		Comments = comments;
 	}
-	public ArrayList<String> getLista() {
+	public ArrayList<Inmuebles> getLista() {
 		return lista;
 	}
 
-	public void setLista(ArrayList<String> lista) {
+	public void setLista(ArrayList<Inmuebles> lista) {
+		
 		this.lista = lista;
 	}
 }
 
-	
+
+
 
