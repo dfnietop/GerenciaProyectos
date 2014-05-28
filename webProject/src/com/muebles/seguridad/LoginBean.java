@@ -37,7 +37,7 @@ public class LoginBean {
 					response.sendRedirect("/webProject/faces/welcome.xhtml");
 				}
 				else{
-					response.sendRedirect("/webProject/faces/logins.xhtml");			
+					response.sendRedirect("/webProject/faces/login.xhtml");			
 				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
