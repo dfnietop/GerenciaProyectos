@@ -44,5 +44,9 @@
 			<from-outcome>registrar</from-outcome>
 			<to-view-id>/RegistroInmuebles.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+		    <from-outcome>verlista</from-outcome>
+			<to-view-id>/welcome.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 </faces-config>
