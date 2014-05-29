@@ -7,6 +7,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import org.apache.catalina.SessionEvent;
+
+import com.muebles.seguridad.LoginBean;
+import com.muebles.seguridad.RegistroBean;
 import com.muebles.seguridad.RegistroInmueblesBean;
 
 
@@ -17,6 +21,7 @@ public class InmueblesDao {
 	//Inmuebles registro=new Inmuebles();
 	ArrayList<Inmuebles> lista = new ArrayList<Inmuebles>();
 	Usuario usuario =new Usuario();
+	LoginBean idn=new LoginBean();
 	public void crearInmueble(Inmuebles Inm, Conexion conexion) {
 	
 		try {
@@ -31,8 +36,8 @@ public class InmueblesDao {
 							+ "'"+Inm.getINMVENOARR()
 							+"','"+Inm.getINMNEGOC()+"'"
 							+",'"+Inm.getINCCOMMENTS()+"'"
-							+",1);";
-							//+","+usuario.getId()+");";
+							//+",1);";
+							+","+idn.getId()+");";
 			
 			System.out.println(sql);
 			st.executeUpdate(sql);
@@ -44,24 +49,27 @@ public class InmueblesDao {
 
 	}
 	
-	public ArrayList<Inmuebles> consultarInmueble(Conexion conexion) {
+	public ArrayList<Inmuebles> consultarInmueble(int id) {
+		Conexion conexion = new Conexion();
 		try {
 			int a;
 			String b;
 			String c;
 			String d;
 			String f;
-			
+		
 
 			Connection con = conexion.getInstance().crearConexion();
 			Statement st = con.createStatement();
 			//Statement comando = conexion.createStatement();
-			String sql = "SELECT id,nombre,direccion,telefono,negocio FROM inmueble WHERE id=1";
-					//+ Inm.getId();
+			String sql = "SELECT idin,nombre,direccion,telefono,negocio FROM inmueble WHERE id="+id+";";
+					
+			//+ Inm.getId();
+			//"+usuario.getId()+"
 			ResultSet resultado = st.executeQuery(sql);
 			while (resultado.next()) {
 				
-				a = resultado.getInt("id");
+				a = resultado.getInt("idin");
 				b = resultado.getString("nombre");
 				c = resultado.getString("direccion");
 				d = resultado.getString("telefono");
@@ -78,11 +86,11 @@ public class InmueblesDao {
 			            lista.add(e);
 			            
 			            	for(int i = 0; i < lista.size(); i++) {
-			                    System.out.println(lista.get(i).getId());
-			                    System.out.println(lista.get(i).getINMNOM());
-			                    System.out.println(lista.get(i).getINMDIR());
-			                    System.out.println(lista.get(i).getINMTEL());
-			                    System.out.println(lista.get(i).getINMNEGOC());
+			                   // System.out.println(lista.get(i).getId());
+			                   // System.out.println(lista.get(i).getINMNOM());
+			                    //System.out.println(lista.get(i).getINMDIR());
+			                    //System.out.println(lista.get(i).getINMTEL());
+			                    //System.out.println(lista.get(i).getINMNEGOC());
 			                    
 			                }
 			            
@@ -109,5 +117,3 @@ public class InmueblesDao {
 
 
 }
-
-	
