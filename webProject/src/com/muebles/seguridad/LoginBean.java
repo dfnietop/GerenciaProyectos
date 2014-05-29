@@ -15,9 +15,11 @@ import com.muebles.persistencia.Usuario;
 import com.muebles.persistencia.UsuarioDao;
 
 public class LoginBean {
+	private static int id;
 	private String name;
 	private String user;
 	private String password;
+	Usuario usua=new Usuario();
 
 	public LoginBean() {
 		// TODO Auto-generated constructor stub
@@ -34,6 +36,12 @@ public class LoginBean {
 				us.setUsuario(this.user);
 				us.setPassword(this.password);
 				if (dao.validarUsuario(us)) {
+				ArrayList inmuebles = new ArrayList();
+					InmueblesDao inmuebledao = new InmueblesDao();
+					
+					inmuebles = inmuebledao.consultarInmueble(id);
+					id=us.getId();
+					
 					response.sendRedirect("/webProject/faces/welcome.xhtml");
 				}
 				else{
@@ -89,5 +97,14 @@ public class LoginBean {
 	public void setUser(String user) {
 		this.user = user;
 	}
+	public int getId() {
+		
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	}
 }
