@@ -54,9 +54,17 @@ Inmuebles Inm = new Inmuebles(0, Comments, Comments, Comments, Comments);
 			Inm.setINCCOMMENTS(this.Comments);
 			//Inm.setIdusuario(this.idusuario);
 			InmD.crearInmueble(Inm, conexion);
+			clear();
 		}
-		
+	}
+	public void clear(){
 
+			this.nombre="";
+			this.direccion="";
+			this.telefono="";
+			this.VentOArr="";
+			this.TipNeg="";
+			this.Comments="";
 	}
 	
 	public void consultain(){
