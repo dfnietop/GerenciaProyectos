@@ -5,9 +5,12 @@
 
 package com.muebles.seguridad;
 
+import java.io.IOException;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.servlet.http.HttpServletResponse;
 
 import com.muebles.persistencia.Usuario;
 import com.muebles.persistencia.UsuarioDao;
@@ -28,17 +31,24 @@ public class RegistroBean {
 	
 	public void guardar(ActionEvent ae){
 		if(ae.getComponent().getId().equals("guardarRegistroId")){
+			FacesContext context = 	FacesContext.getCurrentInstance();
+			HttpServletResponse response = (HttpServletResponse) context
+					.getExternalContext().getResponse();
 			if(this.password.equals(this.conPassword)){
-				UsuarioDao usuarioDao = new UsuarioDao();
-				Usuario usuario = new Usuario();
-				usuario.setNombres(this.nombre);
-				usuario.setApellidos(this.apellido);
-				usuario.setUsuario(this.usuario);
-				usuario.setPassword(this.password);
-				usuario.setEmail(this.email);
-				usuarioDao.guardar(usuario);
-				FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Your Code Is Correct !",null));
-				clear();
+				try {
+					UsuarioDao usuarioDao = new UsuarioDao();
+					Usuario usuario = new Usuario();
+					usuario.setNombres(this.nombre);
+					usuario.setApellidos(this.apellido);
+					usuario.setUsuario(this.usuario);
+					usuario.setPassword(this.password);
+					usuario.setEmail(this.email);
+					usuarioDao.guardar(usuario);
+					FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Your Code Is Correct !",null));
+					response.sendRedirect("/webProject/faces/login.xhtml");
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}else{
 				bolerr=true;
 				error="Las contraseñas no coinciden, por favor intente de nuevo.";

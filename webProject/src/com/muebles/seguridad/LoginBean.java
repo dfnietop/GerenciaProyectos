@@ -6,11 +6,13 @@
 package com.muebles.seguridad;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.servlet.http.HttpServletResponse;
 
+import com.muebles.persistencia.InmueblesDao;
 import com.muebles.persistencia.Usuario;
 import com.muebles.persistencia.UsuarioDao;
 
@@ -36,7 +38,7 @@ public class LoginBean {
 				us.setUsuario(this.user);
 				us.setPassword(this.password);
 				if (dao.validarUsuario(us)) {
-				ArrayList inmuebles = new ArrayList();
+					ArrayList inmuebles = new ArrayList();
 					InmueblesDao inmuebledao = new InmueblesDao();
 					
 					inmuebles = inmuebledao.consultarInmueble(id);
@@ -106,5 +108,5 @@ public class LoginBean {
 		this.id = id;
 	}
 
-	}
+	
 }
