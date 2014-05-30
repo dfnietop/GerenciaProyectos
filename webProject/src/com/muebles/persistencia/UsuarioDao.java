@@ -14,11 +14,14 @@ public class UsuarioDao {
 		try {
 			Connection con = conexion.getInstance().crearConexion();
 			Statement st = con.createStatement();
-			String sql = "SELECT COUNT(1) FROM USUARIOS WHERE usuario ="
+			String sql = "SELECT id,COUNT(1) FROM USUARIOS WHERE usuario ="
 					+ usuario.getUsuario() + " and password ="
 					+ usuario.getPassword();
 			ResultSet res = st.executeQuery(sql);
 			if (res.next()) {
+				
+				int a = res.getInt("id");
+				usuario.setId(a);
 				if (res.getInt(1)!=0) {
 					resp = true;
 				}
