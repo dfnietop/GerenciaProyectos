@@ -9,15 +9,15 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
 	<ui:define name="content">
 		<h:form rendered="true">
-			<h:outputText value="Lista de Inmuebles: #{loginBean.user} "></h:outputText>
-			<h:outputText value="Lista de Inmuebles: #{loginBean.id} "></h:outputText>
+			<h:outputText value="Lista de Inmuebles del usuario: #{loginBean.user} "></h:outputText>
+			<h:outputText value="id del usuario: #{loginBean.id} "></h:outputText>
 			<br></br>
 			<br></br>
 		
 			<h:dataTable value="#{registroInmueblesBean.lista}" border="1" var="lista">
      <h:column>
           <f:facet name="header">
-               <h:outputText value="id"></h:outputText>
+               <h:outputText value="id de su inmueble"></h:outputText>
           </f:facet>
           <h:outputText value="#{lista.id}"></h:outputText>
      </h:column>
